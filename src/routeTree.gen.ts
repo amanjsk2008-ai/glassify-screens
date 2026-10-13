@@ -10,33 +10,219 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AbhaRouteImport } from './routes/abha'
+import { Route as ArchitectureRouteImport } from './routes/architecture'
+import { Route as AssistantRouteImport } from './routes/assistant'
+import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as ExtractionRouteImport } from './routes/extraction'
+import { Route as InsightsRouteImport } from './routes/insights'
+import { Route as PrescriptionsRouteImport } from './routes/prescriptions'
+import { Route as PresentationRouteImport } from './routes/presentation'
+import { Route as ProfileRouteImport } from './routes/profile'
+import { Route as RecordsRouteImport } from './routes/records'
+import { Route as RemindersRouteImport } from './routes/reminders'
+import { Route as ReportsRouteImport } from './routes/reports'
+import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as VisitRouteImport } from './routes/visit'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AbhaRoute = AbhaRouteImport.update({
+  id: '/abha',
+  path: '/abha',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ArchitectureRoute = ArchitectureRouteImport.update({
+  id: '/architecture',
+  path: '/architecture',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AssistantRoute = AssistantRouteImport.update({
+  id: '/assistant',
+  path: '/assistant',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExtractionRoute = ExtractionRouteImport.update({
+  id: '/extraction',
+  path: '/extraction',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InsightsRoute = InsightsRouteImport.update({
+  id: '/insights',
+  path: '/insights',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrescriptionsRoute = PrescriptionsRouteImport.update({
+  id: '/prescriptions',
+  path: '/prescriptions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PresentationRoute = PresentationRouteImport.update({
+  id: '/presentation',
+  path: '/presentation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RecordsRoute = RecordsRouteImport.update({
+  id: '/records',
+  path: '/records',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RemindersRoute = RemindersRouteImport.update({
+  id: '/reminders',
+  path: '/reminders',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReportsRoute = ReportsRouteImport.update({
+  id: '/reports',
+  path: '/reports',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VisitRoute = VisitRouteImport.update({
+  id: '/visit',
+  path: '/visit',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/abha': typeof AbhaRoute
+  '/architecture': typeof ArchitectureRoute
+  '/assistant': typeof AssistantRoute
+  '/dashboard': typeof DashboardRoute
+  '/extraction': typeof ExtractionRoute
+  '/insights': typeof InsightsRoute
+  '/prescriptions': typeof PrescriptionsRoute
+  '/presentation': typeof PresentationRoute
+  '/profile': typeof ProfileRoute
+  '/records': typeof RecordsRoute
+  '/reminders': typeof RemindersRoute
+  '/reports': typeof ReportsRoute
+  '/settings': typeof SettingsRoute
+  '/visit': typeof VisitRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/abha': typeof AbhaRoute
+  '/architecture': typeof ArchitectureRoute
+  '/assistant': typeof AssistantRoute
+  '/dashboard': typeof DashboardRoute
+  '/extraction': typeof ExtractionRoute
+  '/insights': typeof InsightsRoute
+  '/prescriptions': typeof PrescriptionsRoute
+  '/presentation': typeof PresentationRoute
+  '/profile': typeof ProfileRoute
+  '/records': typeof RecordsRoute
+  '/reminders': typeof RemindersRoute
+  '/reports': typeof ReportsRoute
+  '/settings': typeof SettingsRoute
+  '/visit': typeof VisitRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/abha': typeof AbhaRoute
+  '/architecture': typeof ArchitectureRoute
+  '/assistant': typeof AssistantRoute
+  '/dashboard': typeof DashboardRoute
+  '/extraction': typeof ExtractionRoute
+  '/insights': typeof InsightsRoute
+  '/prescriptions': typeof PrescriptionsRoute
+  '/presentation': typeof PresentationRoute
+  '/profile': typeof ProfileRoute
+  '/records': typeof RecordsRoute
+  '/reminders': typeof RemindersRoute
+  '/reports': typeof ReportsRoute
+  '/settings': typeof SettingsRoute
+  '/visit': typeof VisitRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/abha'
+    | '/architecture'
+    | '/assistant'
+    | '/dashboard'
+    | '/extraction'
+    | '/insights'
+    | '/prescriptions'
+    | '/presentation'
+    | '/profile'
+    | '/records'
+    | '/reminders'
+    | '/reports'
+    | '/settings'
+    | '/visit'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/abha'
+    | '/architecture'
+    | '/assistant'
+    | '/dashboard'
+    | '/extraction'
+    | '/insights'
+    | '/prescriptions'
+    | '/presentation'
+    | '/profile'
+    | '/records'
+    | '/reminders'
+    | '/reports'
+    | '/settings'
+    | '/visit'
+  id:
+    | '__root__'
+    | '/'
+    | '/abha'
+    | '/architecture'
+    | '/assistant'
+    | '/dashboard'
+    | '/extraction'
+    | '/insights'
+    | '/prescriptions'
+    | '/presentation'
+    | '/profile'
+    | '/records'
+    | '/reminders'
+    | '/reports'
+    | '/settings'
+    | '/visit'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AbhaRoute: typeof AbhaRoute
+  ArchitectureRoute: typeof ArchitectureRoute
+  AssistantRoute: typeof AssistantRoute
+  DashboardRoute: typeof DashboardRoute
+  ExtractionRoute: typeof ExtractionRoute
+  InsightsRoute: typeof InsightsRoute
+  PrescriptionsRoute: typeof PrescriptionsRoute
+  PresentationRoute: typeof PresentationRoute
+  ProfileRoute: typeof ProfileRoute
+  RecordsRoute: typeof RecordsRoute
+  RemindersRoute: typeof RemindersRoute
+  ReportsRoute: typeof ReportsRoute
+  SettingsRoute: typeof SettingsRoute
+  VisitRoute: typeof VisitRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +234,123 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/abha': {
+      id: '/abha'
+      path: '/abha'
+      fullPath: '/abha'
+      preLoaderRoute: typeof AbhaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/architecture': {
+      id: '/architecture'
+      path: '/architecture'
+      fullPath: '/architecture'
+      preLoaderRoute: typeof ArchitectureRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/assistant': {
+      id: '/assistant'
+      path: '/assistant'
+      fullPath: '/assistant'
+      preLoaderRoute: typeof AssistantRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/extraction': {
+      id: '/extraction'
+      path: '/extraction'
+      fullPath: '/extraction'
+      preLoaderRoute: typeof ExtractionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/insights': {
+      id: '/insights'
+      path: '/insights'
+      fullPath: '/insights'
+      preLoaderRoute: typeof InsightsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/prescriptions': {
+      id: '/prescriptions'
+      path: '/prescriptions'
+      fullPath: '/prescriptions'
+      preLoaderRoute: typeof PrescriptionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/presentation': {
+      id: '/presentation'
+      path: '/presentation'
+      fullPath: '/presentation'
+      preLoaderRoute: typeof PresentationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/records': {
+      id: '/records'
+      path: '/records'
+      fullPath: '/records'
+      preLoaderRoute: typeof RecordsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reminders': {
+      id: '/reminders'
+      path: '/reminders'
+      fullPath: '/reminders'
+      preLoaderRoute: typeof RemindersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reports': {
+      id: '/reports'
+      path: '/reports'
+      fullPath: '/reports'
+      preLoaderRoute: typeof ReportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/visit': {
+      id: '/visit'
+      path: '/visit'
+      fullPath: '/visit'
+      preLoaderRoute: typeof VisitRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AbhaRoute: AbhaRoute,
+  ArchitectureRoute: ArchitectureRoute,
+  AssistantRoute: AssistantRoute,
+  DashboardRoute: DashboardRoute,
+  ExtractionRoute: ExtractionRoute,
+  InsightsRoute: InsightsRoute,
+  PrescriptionsRoute: PrescriptionsRoute,
+  PresentationRoute: PresentationRoute,
+  ProfileRoute: ProfileRoute,
+  RecordsRoute: RecordsRoute,
+  RemindersRoute: RemindersRoute,
+  ReportsRoute: ReportsRoute,
+  SettingsRoute: SettingsRoute,
+  VisitRoute: VisitRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
