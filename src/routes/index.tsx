@@ -1,24 +1,24 @@
-import { createFileRoute } from "@tanstack/react-router";
-
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
-export const Route = createFileRoute("/")({
-  component: Index,
+import { createFileRoute, Link } from '@tanstack/react-router';
+import { ArrowRight, ArrowUpRight, BrainCircuit, Bot, FileHeart, HeartPulse, Play, ShieldCheck, Sparkles, CalendarHeart, ScanLine, Fingerprint, LockKeyhole, ClipboardCheck } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Brand } from '@/components/altrix/common';
+import hero from '@/assets/health-hero.jpg';
+export const Route = createFileRoute('/')({
+ head: () => ({ meta: [ { title: 'Altrix Labs — AI-Powered Personal Health Copilot' }, { name: 'description', content: 'Smarter reports. Better insights. A healthier you. Explore the Altrix Labs personal health copilot demo.' }, { property: 'og:title', content: 'Altrix Labs — Your Personal Health Copilot' }, { property: 'og:description', content: 'Your health, thoughtfully connected. Reports, prescriptions, insights and care in one place.' }, { property: 'og:type', content: 'website' }, { name: 'twitter:card', content: 'summary_large_image' } ] }),
+ component: Index,
 });
-
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
+const features = [
+ { icon: BrainCircuit, title: 'AI Report Analysis', subtitle: 'Clarity beyond the numbers', to: '/reports' as const, tone: 'violet' },
+ { icon: CalendarHeart, title: 'Health Timeline', subtitle: 'Every chapter, connected', to: '/records' as const, tone: 'cyan' },
+ { icon: HeartPulse, title: 'Personal Health Profile', subtitle: 'A complete picture of you', to: '/profile' as const, tone: 'pink' },
+ { icon: ClipboardCheck, title: 'Doctor Visit Prep', subtitle: 'Walk in with confidence', to: '/visit' as const, tone: 'cyan' },
+];
+const capabilities = [
+ { icon: FileHeart, title: 'Understand your health reports', description: 'Turn complex medical numbers into clear insights, meaningful trends, and better questions for your doctor.', to: '/reports' as const, tone: 'violet', tag: 'AI Report Analysis' },
+ { icon: ScanLine, title: 'Keep prescriptions organized', description: 'Bring your prescriptions, medicines, and daily reminders together. One less thing to keep in your head.', to: '/prescriptions' as const, tone: 'cyan', tag: 'Prescription Reader' },
+ { icon: Bot, title: 'A little guidance. A lot of clarity.', description: 'Explore your sample health insights with a friendly assistant and feel more prepared for your next conversation.', to: '/assistant' as const, tone: 'pink', tag: 'AI Health Assistant' },
+];
+function Index() { return <div className="landing"><header className="landing-nav"><Brand /><nav className="landing-nav-links"><Link to="/" className="text-foreground">Home</Link><Link to="/dashboard">Dashboard</Link><Link to="/reports">Reports</Link><Link to="/architecture">About</Link><Link to="/presentation">Our vision</Link></nav><Button asChild variant="glass" size="sm"><Link to="/dashboard">Get Started <ArrowUpRight /></Link></Button></header>
+ <main><section className="hero"><img className="hero-art" src={hero} alt="A luminous glass medical cube with human anatomy, heart and health insights" width={1536} height={1024} /><div className="hero-copy"><div className="eyebrow"><span className="eyebrow-dot" />Intelligence meets wellbeing</div><h1>Your AI-Powered<br /><span className="gradient-text">Personal Health<br />Copilot</span></h1><p className="hero-subtitle">Smarter reports. Better insights. A healthier you.</p><p className="hero-description">Understand your medical reports, connect your health journey, and take the next step with confidence.</p><div className="hero-actions"><Button asChild variant="glass" size="lg"><Link to="/dashboard">Get Started <ArrowRight /></Link></Button><Button asChild variant="glassOutline" size="lg"><Link to="/presentation"><Play size={14} />Explore Demo</Link></Button></div><div className="hero-trust"><ShieldCheck />Privacy first<span>·</span><span>Designed around you</span><span>·</span><span>Demo experience</span></div></div><div className="hero-art-label">Your Health<br /><span className="text-cyan">Our Priority</span></div></section>
+ <div className="feature-strip glass">{features.map(f => <Link to={f.to} key={f.title}><div className={`icon-well tone-${f.tone}`}><f.icon size={23} /></div><div className="min-w-0"><h3 className="text-xs font-medium mb-1">{f.title}</h3><p className="text-muted-foreground text-[10px]">{f.subtitle}</p></div></Link>)}</div>
+ <section className="landing-section"><div className="section-heading"><div className="eyebrow"><Sparkles size={13} />Thoughtfully connected</div><h2>A clearer picture of <span className="gradient-text">your health.</span></h2><p>Everything that matters, together in one personal space.</p></div><div className="capabilities">{capabilities.map(c => <Link key={c.title} to={c.to} className="glass capability"><div className={`icon-well tone-${c.tone}`}><c.icon /></div><h3>{c.title}</h3><p>{c.description}</p><div className="capability-bottom"><span>{c.tag}</span><ArrowUpRight size={18} /></div></Link>)}</div><div className="flex justify-center items-center gap-6 mt-10 text-muted-foreground text-[10px]"><span className="flex items-center gap-2"><LockKeyhole size={13} />Privacy-minded</span><span className="flex items-center gap-2"><Fingerprint size={13} />ABHA-ready demo</span><span className="flex items-center gap-2"><HeartPulse size={13} />Human-centered</span></div></section></main><footer className="landing-footer"><span>© 2026 Altrix Labs · AI-Powered Personal Health Copilot</span><span className="flex gap-5"><Link to="/settings">Privacy & Safety</Link><Link to="/architecture">Architecture</Link><span>Built with care <span className="text-pink">♡</span></span></span></footer></div>; }
