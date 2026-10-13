@@ -7,6 +7,28 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
+  vite: {
+    // Prebundle shared hook consumers together before the first browser request.
+    // Late dependency discovery can otherwise leave an open preview using two
+    // optimization generations, and therefore two React hook dispatchers.
+    optimizeDeps: {
+      include: [
+        "react",
+        "react/jsx-runtime",
+        "react/jsx-dev-runtime",
+        "react-dom/client",
+        "@tanstack/react-query",
+        "@radix-ui/react-slot",
+        "@radix-ui/react-switch",
+        "lucide-react",
+        "sonner",
+        "recharts",
+        "class-variance-authority",
+        "clsx",
+        "tailwind-merge",
+      ],
+    },
+  },
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
