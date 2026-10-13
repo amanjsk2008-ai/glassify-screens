@@ -13,3 +13,4 @@
 - Use the shared Altrix workspace and typed module registry for all health screens to minimize duplication.
 - Keep fictional demo state in the shared browser-local provider; actual documents are previewed only and never represented as extracted by real OCR.
 - Use semantic glass styles and existing design-system controls; leaf routes provide unique metadata.
+- Prebundle shared React hook consumers in Vite optimizeDeps together to prevent late optimization generations from duplicating React in an open preview.
